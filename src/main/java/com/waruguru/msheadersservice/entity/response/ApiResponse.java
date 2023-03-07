@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ApiResponse {
-    public ApiResponse header;
+    public HeaderResponse header;
     public Object body;
 }
 

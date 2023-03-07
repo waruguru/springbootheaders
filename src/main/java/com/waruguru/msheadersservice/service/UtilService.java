@@ -91,6 +91,16 @@ public class UtilService {
         Matcher matcher = pattern.matcher(email);
         return matcher.matches();
     }
+    public static ResponseEntity<?> buildResponse(LogDto logDto, Object obj,String customerMessage) {
+        HeaderResponse header = new HeaderResponse(
+                logDto.getRequestId(),
+                "200",
+                customerMessage,
+                customerMessage,
+                new Date(System.currentTimeMillis()).toString()
+        );
+        return ResponseEntity.ok( new ApiResponse(header, obj));
+    }
 
   //  Is phone number valid
     private boolean isValidMsisdn(String msisdn) {

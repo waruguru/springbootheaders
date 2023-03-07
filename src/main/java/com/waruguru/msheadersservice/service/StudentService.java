@@ -2,6 +2,7 @@ package com.waruguru.msheadersservice.service;
 
 import com.waruguru.msheadersservice.entity.StudentModel;
 import com.waruguru.msheadersservice.entity.request.StudentDto;
+import com.waruguru.msheadersservice.entity.response.LogDto;
 import com.waruguru.msheadersservice.repository.StudentRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -14,7 +15,7 @@ import java.util.UUID;
 public class StudentService {
     private final StudentRepository studentRepository;
 
-    private StudentModel addNewStudent(StudentDto studentDto){
+    public StudentModel addNewStudent(LogDto logDto, StudentDto studentDto,String sourceApp){
        StudentModel newStudentModel = new StudentModel();
        newStudentModel.setAge(studentDto.getAge());
        newStudentModel.setCreatedAt(LocalDateTime.now());
