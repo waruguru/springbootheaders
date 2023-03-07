@@ -13,7 +13,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
-import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -119,29 +118,6 @@ public class UtilService {
         }
     }
 
-
-    public static String formartPhoneNumber(String phoneNumber){
-        if (phoneNumber.startsWith("0")){
-            phoneNumber = "254" + phoneNumber.substring(1);
-        }
-        return phoneNumber;
-    }
-
-    public static String[] stringToArray(String s) {
-        return s.split(",");
-    }
-
-    public static String arrayToString(List<String> list) {
-        StringBuilder s= new StringBuilder();
-        int index =0;
-        for (String s1:list) {
-            s.append(s1);
-            if (index<list.size())
-                s.append(",");
-            index++;
-        }
-        return s.toString();
-    }
 
 
 

@@ -68,7 +68,7 @@ public class StudentService {
     }
 
     //delete records for a student
-    public StudentModel deleteStudentsRecords(LogDto logDto,String phoneNumber){
+    public StudentModel deleteStudentsRecords(LogDto logDto, String phoneNumber){
         Optional<StudentModel> optionalStudentModel = studentRepository.findByPhoneNumber(phoneNumber);
 
         if (!optionalStudentModel.isPresent()){
@@ -76,8 +76,10 @@ public class StudentService {
                     logDto.getRequestId(),StringConstants.STUDENT_WITH_PHONE_NUMBER_NOT_FOUND,
                     StringConstants.STUDENT_WITH_PHONE_NUMBER_NOT_FOUND);
 
-            studentRepository.deleteByPhoneNumber(phoneNumber);
         }
+        studentRepository.deleteByPhoneNumber(phoneNumber);
+
+        return null;
     }
 
 }

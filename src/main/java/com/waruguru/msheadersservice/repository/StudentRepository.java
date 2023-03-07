@@ -10,5 +10,5 @@ import java.util.Optional;
 public interface StudentRepository extends JpaRepository<StudentModel,Long> {
     Optional<StudentModel> findByPhoneNumber(String phoneNumber);
 
-    Optional<StudentModel> deleteByPhoneNumber(String phoneNumber);
+    void deleteByPhoneNumber(String phoneNumber);
 }
