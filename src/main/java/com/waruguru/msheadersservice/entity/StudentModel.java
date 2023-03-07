@@ -23,8 +23,8 @@ public class StudentModel {
     private long id;
     private String fullName;
     private String courseName;
+    private String phoneNumber;
     private long age;
-    private String createdBy;
     @JsonIgnore
     @CreationTimestamp
     private LocalDateTime createdAt;
